@@ -1,5 +1,5 @@
-import { xor } from 'lodash'
 import '../styles/styles.css'
+import 'lazysizes'
 import MobileMenu from './modules/MobileMenu'
 import RevealOnScroll from './modules/RevealOnScroll'
 import StickyHeader from './modules/StickyHeader'
@@ -7,17 +7,17 @@ import StickyHeader from './modules/StickyHeader'
 new StickyHeader()
 new RevealOnScroll(document.querySelectorAll(".feature-item"), 75)
 new RevealOnScroll(document.querySelectorAll(".testimonial"), 60)
-new MobileMenu()
+new MobileMenu();
 let modal
 
-document.querySelectorAll('.open-modal').forEach(el => {
-  el.addEventListener('click', e => {
+document.querySelectorAll(".open-modal").forEach(el => {
+  el.addEventListener("click", e => {
     e.preventDefault()
-    if (typeof modal == 'undefined') {
-      import(/* webpackChunkName: 'modal' */ './modules/Modal').then(x => {
+    if (typeof modal == "undefined") {
+      import(/* webpackChunkName: "modal" */ './modules/Modal').then(x => {
         modal = new x.default()
         setTimeout(() => modal.openTheModal(), 20)
-      }).catch(() => console.log('There was a problem.'))
+      }).catch(() => console.log("There was a problem."))
     } else {
       modal.openTheModal()
     }
