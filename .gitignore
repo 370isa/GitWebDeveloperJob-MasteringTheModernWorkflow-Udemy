@@ -9,8 +9,10 @@
 *.vi
 *~
 *.sass-cache
-node_modules/
 .tmp/
+dist/
+docs/
+node_modules/
 package-lock.json
 
 # OS or Editor folders
