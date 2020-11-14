@@ -10,7 +10,7 @@
 *~
 *.sass-cache
 .tmp/
-app/
+docs/
 node_modules/
 package-lock.json
 
